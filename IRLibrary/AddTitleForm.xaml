@@ -1,0 +1,69 @@
+﻿<Window x:Class="IRLibrary.AddTitleForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IRLibrary"
+        mc:Ignorable="d"
+        Title="AddTitleOrRealise" Height="600" Width="400"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    <Window.Resources>
+        <!--
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="templateRoot" Background="{StaticResource ComboBox.Static.Background}" BorderBrush="{StaticResource ComboBox.Static.Border}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <Border x:Name="splitBorder" BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                                There must be image or combination of forms
+                                <Path x:Name="arrow" Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z" Fill="{StaticResource ComboBox.Static.Glyph}" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                                
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboBoxStyle1" TargetType="{x:Type ComboBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ComboBox.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="Padding" Value="6,3,5,3"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template" Value="{StaticResource ComboBoxTemplate}"/>
+            <Style.Triggers>
+                <Trigger Property="IsEditable" Value="true">
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        -->
+    </Window.Resources>
+    <Grid>
+        <StackPanel VerticalAlignment="Top">
+            <TextBox x:Name="SearchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+            <ListBox x:Name="SearchList" Grid.Row="1"  ItemsSource="{Binding MyFilteredItems}" SelectionChanged="SelectRealize"/>
+        </StackPanel>
+    </Grid>
+</Window>
