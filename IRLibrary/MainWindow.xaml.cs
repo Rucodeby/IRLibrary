@@ -106,9 +106,10 @@ namespace IRLibrary {
                 }
                 ExpanderPanel.Children.Add(new CustomExpander(ID, tmp.Content.ToString(), new List<string>() { tmp.Content.ToString(), name }));
                 ExpanderPanel.Children.Remove(tmp);
-            } else if (el == null) {
+            } else if (el == null & name != null) {
                 ExpanderPanel.Children.Add(new RealizeLabel(ID, name));
-            }
+            } else
+                return false;
             updateCounters();
             return true;
         }
